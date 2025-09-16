@@ -88,7 +88,7 @@ def restart_game():
 
 running = True
 
-def main():
+async def main():
 
     global running, state, score, lives
     global player_x, player_y, player_vel_y, player_jump
@@ -282,7 +282,9 @@ def main():
                         state = 1
 
         pg.display.flip()
+        await asyncio.sleep(0)
 
     pg.quit()
 
-main()
+
+asyncio.run(main())
